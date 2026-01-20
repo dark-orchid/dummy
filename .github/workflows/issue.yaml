@@ -1,0 +1,19 @@
+name: Issue to project
+
+on:
+  issues:
+    types:
+      - opened
+
+permissions:
+  issues: write
+
+jobs:
+  issues:
+    uses: dark-orchid/_workflows/.github/workflows/issue-opened.yaml@main
+    with:
+      labels: "help wanted"
+      assignees: "simonkovtyk"
+      projects: "PVT_kwDODRXT9s4BMtR0"
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
